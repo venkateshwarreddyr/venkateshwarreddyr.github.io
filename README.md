@@ -1,73 +1,41 @@
-# React + TypeScript + Vite
+# Venkateshwar Reddygari — Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🌐 **Live Site:** [https://venkateshwarreddyr.github.io/](https://venkateshwarreddyr.github.io/)
 
-Currently, two official plugins are available:
+> Senior Software Engineer | AI/ML | Full-Stack | Cloud | 8+ Years Experience
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tech Stack
 
-## React Compiler
+- **React 19 + TypeScript + Vite**
+- **Tailwind CSS v4**
+- **Framer Motion** — animations & page transitions
+- **React Router v7** — multi-page navigation
+- **Lucide React** — icons
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Pages
 
-## Expanding the ESLint configuration
+| Page | Description |
+|------|-------------|
+| Home | Hero with typewriter animation, stats, CTAs |
+| About | Professional summary, achievements, expertise |
+| Experience | Interactive career timeline |
+| Skills | Categorized tech stack (AI/ML, Frontend, Backend, Cloud, DSA) |
+| Projects | 6 featured AI-powered project cards |
+| Contact | Professional links & contact CTA |
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Run Locally
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Build
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run build
 ```
+
+## Deployment
+
+Deployed on **Cloudflare Pages** with SPA routing via `public/_redirects`.
