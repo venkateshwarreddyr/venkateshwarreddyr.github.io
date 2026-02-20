@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { ExternalLink } from 'lucide-react'
+import { Github, ExternalLink, Package } from 'lucide-react'
 import { projects } from '../data/portfolio'
 
 const inView = {
@@ -15,6 +15,12 @@ const fadeUp = {
     scale: 1,
     transition: { duration: 0.5, delay: i * 0.08, ease: 'easeOut' as const },
   }),
+}
+
+function linkIcon(label: string) {
+  if (label === 'GitHub') return <Github className="w-3.5 h-3.5" />
+  if (label.startsWith('npm')) return <Package className="w-3.5 h-3.5" />
+  return <ExternalLink className="w-3.5 h-3.5" />
 }
 
 export default function Projects() {
@@ -37,7 +43,7 @@ export default function Projects() {
             Featured <span className="gradient-text">Projects</span>
           </h2>
           <p className="text-slate-400 text-lg max-w-2xl mx-auto">
-            Cutting-edge AI-powered systems, enterprise platforms, and innovative solutions built across real estate, healthcare, and SaaS domains.
+            Cutting-edge AI-powered systems, enterprise platforms, and open-source tools — built across real estate, healthcare, and SaaS domains.
           </p>
         </motion.div>
 
@@ -53,7 +59,7 @@ export default function Projects() {
               variants={fadeUp}
               className="group glass-card-hover rounded-2xl p-6 flex flex-col"
             >
-              {/* Icon + Title */}
+              {/* Icon */}
               <div className="flex items-start justify-between mb-4">
                 <div className={`w-12 h-12 rounded-xl flex items-center justify-center text-2xl ${
                   project.color === 'cyan'
@@ -62,14 +68,23 @@ export default function Projects() {
                 }`}>
                   {project.icon}
                 </div>
-                <ExternalLink className="w-4 h-4 text-slate-600 group-hover:text-slate-400 transition-colors mt-1" />
+                {/* Primary link (first link = main CTA) */}
+                <a
+                  href={project.links[0].url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2 rounded-lg text-slate-600 group-hover:text-slate-300 hover:bg-white/8 transition-all mt-0.5"
+                  title={project.links[0].label}
+                >
+                  <ExternalLink className="w-4 h-4" />
+                </a>
               </div>
 
               <h3 className="text-lg font-bold text-white mb-2">{project.title}</h3>
               <p className="text-slate-400 text-sm leading-relaxed flex-grow mb-5">{project.description}</p>
 
               {/* Tags */}
-              <div className="flex flex-wrap gap-2 pt-4 border-t border-white/5">
+              <div className="flex flex-wrap gap-2 pt-4 border-t border-white/5 mb-4">
                 {project.tags.map((tag) => (
                   <span
                     key={tag}
@@ -81,6 +96,26 @@ export default function Projects() {
                   >
                     {tag}
                   </span>
+                ))}
+              </div>
+
+              {/* Links row */}
+              <div className="flex flex-wrap gap-2">
+                {project.links.map((link) => (
+                  <a
+                    key={link.label}
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all duration-200 ${
+                      project.color === 'cyan'
+                        ? 'bg-cyan-400/10 border border-cyan-400/20 text-cyan-400 hover:bg-cyan-400/20'
+                        : 'bg-violet-400/10 border border-violet-400/20 text-violet-400 hover:bg-violet-400/20'
+                    }`}
+                  >
+                    {linkIcon(link.label)}
+                    {link.label}
+                  </a>
                 ))}
               </div>
             </motion.div>
@@ -111,12 +146,23 @@ export default function Projects() {
               <p className="text-slate-400 max-w-xl mx-auto mb-6">
                 Specialized in agentic systems, real-time AI orchestration, and enterprise automation. Let's build something extraordinary together.
               </p>
-              <a
-                href="mailto:venkateshwarreddyr@outlook.com"
-                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 to-violet-500 text-white font-semibold hover:opacity-90 active:scale-95 transition-all shadow-lg shadow-cyan-500/20"
-              >
-                Let's Collaborate
-              </a>
+              <div className="flex flex-wrap items-center justify-center gap-4">
+                <a
+                  href="mailto:venkateshwarreddyr@outlook.com"
+                  className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 to-violet-500 text-white font-semibold hover:opacity-90 active:scale-95 transition-all shadow-lg shadow-cyan-500/20"
+                >
+                  Let's Collaborate
+                </a>
+                <a
+                  href="https://github.com/venkateshwarreddyr"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl glass-card text-slate-200 font-semibold hover:bg-white/8 active:scale-95 transition-all"
+                >
+                  <Github className="w-5 h-5" />
+                  View GitHub
+                </a>
+              </div>
             </div>
           </div>
         </motion.div>

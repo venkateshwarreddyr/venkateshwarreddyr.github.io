@@ -40,8 +40,42 @@ export default function About() {
           </p>
         </motion.div>
 
-        {/* Main Grid */}
-        <div className="grid md:grid-cols-2 gap-8 mb-16">
+        {/* Photo + Bio + Info row */}
+        <div className="grid md:grid-cols-3 gap-8 mb-16">
+
+          {/* Photo */}
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-60px' }}
+            variants={fadeUp}
+            custom={0}
+            className="flex flex-col items-center gap-4"
+          >
+            <div className="relative">
+              {/* Glow ring */}
+              <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-cyan-400/30 to-violet-400/30 blur-xl scale-110" />
+              <div className="relative w-full max-w-[260px] mx-auto rounded-2xl overflow-hidden border-2 border-white/10 shadow-2xl">
+                <img
+                  src="/images/self1.png"
+                  alt="Venkateshwar Reddygari"
+                  className="w-full h-auto object-cover"
+                  onError={(e) => {
+                    // fallback to self2 if self1 fails
+                    (e.target as HTMLImageElement).src = '/images/self2.jpeg'
+                  }}
+                />
+              </div>
+            </div>
+            <div className="text-center">
+              <div className="text-white font-bold text-lg">Venkateshwar Reddygari</div>
+              <div className="gradient-text text-sm font-medium">Senior Software Engineer</div>
+              <div className="flex items-center justify-center gap-1.5 mt-2 text-slate-500 text-xs">
+                <MapPin className="w-3.5 h-3.5" />
+                Hyderabad, India
+              </div>
+            </div>
+          </motion.div>
 
           {/* Bio Card */}
           <motion.div
@@ -49,7 +83,7 @@ export default function About() {
             whileInView="visible"
             viewport={{ once: true, margin: '-60px' }}
             variants={fadeUp}
-            custom={0}
+            custom={1}
             className="glass-card rounded-2xl p-8"
           >
             <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
@@ -73,7 +107,7 @@ export default function About() {
             whileInView="visible"
             viewport={{ once: true, margin: '-60px' }}
             variants={fadeUp}
-            custom={1}
+            custom={2}
             className="glass-card rounded-2xl p-8 flex flex-col gap-5"
           >
             <h3 className="text-xl font-bold text-white mb-2 flex items-center gap-2">
@@ -87,7 +121,7 @@ export default function About() {
               { icon: GraduationCap, label: 'Education', value: 'B.Tech in Computer Science, Vignan University (2014–2018)', color: 'text-cyan-400' },
             ].map(({ icon: Icon, label, value, color }) => (
               <div key={label} className="flex items-start gap-3">
-                <div className={`mt-0.5 p-2 rounded-lg bg-white/5`}>
+                <div className="mt-0.5 p-2 rounded-lg bg-white/5">
                   <Icon className={`w-4 h-4 ${color}`} />
                 </div>
                 <div>
@@ -130,7 +164,7 @@ export default function About() {
             <h3 className="text-2xl font-bold text-white">Achievements & Recognition</h3>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
             {achievements.map((item, i) => (
               <motion.div
                 key={i}

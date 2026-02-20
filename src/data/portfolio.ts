@@ -20,7 +20,7 @@ export const personalInfo = {
     { label: 'Years Experience', value: '8+' },
     { label: 'LeetCode Solutions', value: '2000+' },
     { label: 'Contest Rating', value: '1800+' },
-    { label: 'Companies', value: '6+' },
+    { label: 'Open Source', value: 'npm' },
   ],
 }
 
@@ -162,52 +162,84 @@ export const skillCategories = [
 
 export const projects = [
   {
+    title: 'x-skills-for-ai',
+    description:
+      'Open-source npm package enabling AI agents to execute skills (tools) reliably in production. Powers multi-agent automation with a clean SDK for both Node.js and React applications.',
+    tags: ['TypeScript', 'npm', 'Open Source', 'AI Agents', 'React SDK'],
+    color: 'cyan',
+    icon: '🧠',
+    links: [
+      { label: 'GitHub', url: 'https://github.com/venkateshwarreddyr/x-skills-for-ai' },
+      { label: 'npm core', url: 'https://www.npmjs.com/package/@x-skills-for-ai/core' },
+      { label: 'npm react', url: 'https://www.npmjs.com/package/@x-skills-for-ai/react' },
+      { label: 'Example App', url: 'https://github.com/venkateshwarreddyr/example-app-with-x-skills-for-ai' },
+    ],
+  },
+  {
     title: 'Agentic Browser Copilot',
     description:
       'Chrome MV3 extension with a LangGraph-based Azure Functions backend. Uses SSE + Azure Redis Pub/Sub to orchestrate real-time and Human-in-the-Loop (HITL) web UI automation from AI agents.',
     tags: ['LangGraph', 'Chrome MV3', 'Azure Functions', 'SSE', 'Redis', 'TypeScript'],
-    color: 'cyan',
+    color: 'purple',
     icon: '🤖',
+    links: [
+      { label: 'GitHub', url: 'https://github.com/venkateshwarreddyr' },
+    ],
   },
   {
     title: 'Voice Bot with Screenshare',
     description:
       'AI assistant integrating OpenAI Realtime API with HTML-to-Markdown screen analysis, delivering proactive and contextual real-time UI guidance to users based on what\'s on their screen.',
     tags: ['OpenAI Realtime', 'React', 'TypeScript', 'Screen Analysis'],
-    color: 'purple',
+    color: 'cyan',
     icon: '🎙️',
+    links: [
+      { label: 'GitHub', url: 'https://github.com/venkateshwarreddyr' },
+    ],
   },
   {
     title: 'Multi-Agent Automation Platform',
     description:
       '"Script Factory" — multi-agent system that autonomously analyzes websites and generates custom web automation scripts, eliminating manual coding requirements entirely.',
     tags: ['Multi-Agent', 'LangGraph', 'Python', 'TypeScript', 'Web Scraping'],
-    color: 'cyan',
+    color: 'purple',
     icon: '⚡',
+    links: [
+      { label: 'GitHub', url: 'https://github.com/venkateshwarreddyr' },
+    ],
   },
   {
     title: 'AI Document Generation (RAG)',
     description:
       'RAG-powered system for automated legal document creation. Intelligently maps document placeholders to knowledge base entries, reducing manual document preparation time drastically.',
     tags: ['RAG', 'OpenAI', 'LangChain', 'PostgreSQL', 'Python'],
-    color: 'purple',
+    color: 'cyan',
     icon: '📄',
+    links: [
+      { label: 'GitHub', url: 'https://github.com/venkateshwarreddyr' },
+    ],
   },
   {
     title: 'CRM Automation Suite (MCP)',
     description:
       'Salesforce AI toolkit built on Model Context Protocol (MCP) to automate support cases, contacts, and opportunities management with natural language instructions.',
     tags: ['MCP', 'Salesforce', 'JSForce', 'TypeScript', 'OpenAI'],
-    color: 'cyan',
+    color: 'purple',
     icon: '🔗',
+    links: [
+      { label: 'GitHub', url: 'https://github.com/venkateshwarreddyr' },
+    ],
   },
   {
     title: 'Contract Intelligence Platform',
     description:
       'Full-stack solution extracting risk data and key clauses from legal contracts and SOC reports using a multi-cloud AI strategy across OpenAI, Azure, and GCP.',
     tags: ['React', 'Python', 'OpenAI', 'Azure', 'GCP', 'Document AI'],
-    color: 'purple',
+    color: 'cyan',
     icon: '⚖️',
+    links: [
+      { label: 'GitHub', url: 'https://github.com/venkateshwarreddyr' },
+    ],
   },
 ]
 
@@ -239,5 +271,19 @@ export const achievements = [
     subtitle: 'Tarang Fest',
     detail: 'Programming Contest, Vignan University',
     icon: '🥇',
+  },
+  {
+    title: 'Multi-Cloud',
+    value: 'AWS',
+    subtitle: '+ Azure + GCP',
+    detail: 'EC2, Lambda, ECS, S3, DynamoDB, Functions',
+    icon: '☁️',
+  },
+  {
+    title: 'Open Source',
+    value: 'npm',
+    subtitle: '@x-skills-for-ai',
+    detail: 'Published core + React SDK packages',
+    icon: '📦',
   },
 ]
