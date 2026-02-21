@@ -49,6 +49,24 @@ const fadeUp = {
 export default function Home() {
   return (
     <div className="relative min-h-screen flex flex-col items-center justify-center hero-bg section-padding pt-24 md:pt-32">
+
+      {/* Profile photo - left side */}
+      <motion.div
+        initial={{ opacity: 0, x: -40 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8, delay: 0.3, ease: 'easeOut' }}
+        className="hidden lg:block fixed left-8 xl:left-16 top-1/2 -translate-y-1/2 z-20"
+      >
+        <div className="relative group">
+          <div className="absolute -inset-1 rounded-2xl bg-gradient-to-br from-cyan-500/30 to-violet-500/30 blur-md group-hover:blur-lg transition-all duration-500" />
+          <img
+            src="/images/self2.jpeg"
+            alt={personalInfo.name}
+            className="relative w-28 h-28 xl:w-36 xl:h-36 rounded-2xl object-cover border-2 border-white/10 shadow-2xl shadow-cyan-500/10 group-hover:border-cyan-400/30 transition-all duration-500"
+          />
+        </div>
+      </motion.div>
+
       <div className="relative z-10 max-w-5xl mx-auto w-full text-center">
 
         {/* Badge */}
