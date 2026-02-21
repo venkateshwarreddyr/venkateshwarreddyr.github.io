@@ -60,7 +60,7 @@ export default function Home() {
         <div className="relative group">
           <div className="absolute -inset-1 rounded-2xl bg-gradient-to-br from-cyan-500/30 to-violet-500/30 blur-md group-hover:blur-lg transition-all duration-500" />
           <img
-            src="/images/self2.jpeg"
+            src="/images/self2.png"
             alt={personalInfo.name}
             className="relative w-28 h-28 xl:w-36 xl:h-36 rounded-2xl object-cover border-2 border-white/10 shadow-2xl shadow-cyan-500/10 group-hover:border-cyan-400/30 transition-all duration-500"
           />

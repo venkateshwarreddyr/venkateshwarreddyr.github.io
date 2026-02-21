@@ -62,7 +62,7 @@ export default function About() {
                   className="w-full h-auto object-cover"
                   onError={(e) => {
                     // fallback to self2 if self1 fails
-                    (e.target as HTMLImageElement).src = '/images/self2.jpeg'
+                    (e.target as HTMLImageElement).src = '/images/self2.png'
                   }}
                 />
               </div>
